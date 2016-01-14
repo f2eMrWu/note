@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+
+<style>
+	
+	#test{
+		height: 100px;
+		transiton:0s;
+	}
+
+	#test{
+
+	}
+</style>
+
+<div id="parentElement">
+  <span id="test">foo bar</span>
+</div>
+<script type="text/javascript">
+
+	var ary = [1];
+for(var i=0,len=ary.length;i<len ,++i) {
+       console.log(ary[i]);
+}
+</script>
+
+<script>
+// // Create a new, plain <span> element
+// var sp1 = document.createElement("span");
+
+// sp1.textContent = 123;
+
+// // Get a reference to the element, before we want to insert the element
+// var sp2 = document.getElementById("childElement");
+// // Get a reference to the parent element
+// var parentDiv = sp2.parentNode;
+
+// // Insert the new element into the DOM before sp2
+// parentDiv.insertBefore(sp1, sp2);
+</script>
+
+
+<!-- <div id="test" class='box' test = '1'>
+	<p>test</p>
+	<p>test2</p>
+	<a href="">test3</a>
+</div>
+<ul>
+	<li>1</li>
+	<li>2</li>
+	<li>3</li>
+	<li>4</li>
+	<li>5</li>
+</ul>
+<input type="checkbox" id="input"> -->
+	<script src='../static/dom.js'></script>
+	<script>
+		var p = document.createElement('p');
+		p.textContent = 'test';
+		$('li').append(p);
+		$('li').append('test');
+	</script>
+</body>
+</html>

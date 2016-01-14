@@ -1,0 +1,6 @@
+引用类型的值可以用伪代码表示为一个拥有两个属性的对象——base属性（属性所属的对象）以及该base对象中的propertyName属性：
+
+var valueOfReferenceType = {
+  base: ,
+  propertyName: 
+};
