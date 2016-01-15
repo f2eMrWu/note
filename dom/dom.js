@@ -10,6 +10,8 @@
 			this.elements = document.querySelectorAll(eles[0]);
 		}
 		
+
+
 		// for(var i = 0; i < eles.length; i++){
 		// 	var ele = document.getElementById(eles[i]);
 		// 	this.elements.push(ele);
@@ -54,10 +56,6 @@
 				
 				return this;
 			}
-		},
-
-		prop:function(name,value){
-
 		}
 
 	};
@@ -180,7 +178,6 @@
 				this.each(function(n,v){
 					//这里使用appendChild复制htmlString 每次都为把节点取出后再插入,所以这次每次都执行一次克隆
 					v.appendChild(htmlString.cloneNode(true))
-
 				})
 			}else if(typeof htmlString === 'string' || typeof htmlString === 'number'){
 				this.each(function(n,v){
@@ -214,6 +211,15 @@
 			}
 			
 		},
+
+		wrap:function(ele){
+			if(ele.nodeType === 1){
+				this.each(function(k,v){
+					ele.appendChild(v.cloneNode(true));
+					v.parentNode.replaceChild(ele,v);
+				})
+			}
+		}
 
 	}) 
 
