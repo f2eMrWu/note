@@ -2,6 +2,8 @@
 
 (function(window,document){
 
+
+
 	function dom(eles){
 
 		if(arguments.length === 0){
@@ -9,9 +11,6 @@
 		}else{
 			this.elements = document.querySelectorAll(eles[0]);
 		}
-		
-
-
 		// for(var i = 0; i < eles.length; i++){
 		// 	var ele = document.getElementById(eles[i]);
 		// 	this.elements.push(ele);
@@ -59,27 +58,6 @@
 		}
 
 	};
-
-
-
-	// //增
-
-	/*
-	HTMLElement .classList 原型对象
-	DOMTokenList {
-		
-		add:增加，如不传入参数不操作
-		remove:删除，如不传入参数不操作
-		toggle:有删除 没有增加
-		contains:是否包含
-		item:索引
-
-
-	}
-
-	*/
-
-
 
 	dom.prototype.extend({
 
@@ -191,6 +169,13 @@
 			}
 		},
 
+		prepend:function(node){
+				this.each(function(n,v){
+					//这里使用appendChild复制htmlString 每次都为把节点取出后再插入,所以这次每次都执行一次克隆
+					v.insertBefore(node,v.children[0])
+				})
+		},
+
 		after:function(htmlString){
 
 			if(htmlString.nodeType == 1){
@@ -222,6 +207,61 @@
 		}
 
 	}) 
+
+	dom.prototype.extend({
+		on:function(event,selector,handle){ //selector暂时
+			if(handle === undefined){
+				handle = selector;
+				this.each(function(k,v){
+					v.addEventListener(event,handle);
+				})
+			}else{
+				if(typeof selector === 'string'){
+					this.each(function(k,v){
+						v.addEventListener(event,function(e){
+							var target = e.target;
+							//这里为了使得selector后代元素点击也触发事件，写了一个判断parent是否存在的方法
+					
+						})
+					})			}
+			}
+		},
+		hasParent:function(ele,target){
+			var parent = ele.parentNode;
+			if(parent.nodeName == 'BODY'){
+				return false;
+			}
+			if(parent == target){
+				return true;
+			}else{
+				ele = parent;
+				arguments.callee();
+			}
+		}
+	})
+
+
+
+	// //增
+
+	/*
+	HTMLElement .classList 原型对象
+	DOMTokenList {
+		
+		add:增加，如不传入参数不操作
+		remove:删除，如不传入参数不操作
+		toggle:有删除 没有增加
+		contains:是否包含
+		item:索引
+
+
+	}
+
+	*/
+
+
+
+	
 
 
 	window.$ = function(){
