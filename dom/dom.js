@@ -26,6 +26,21 @@
 
 		},
 
+		makeHtml:function(ele){
+			if(ele.nodeType == 1){
+				return ele;
+			}
+			if(typeof ele == 'String'){
+				if(ele.charAt(0) === '<' && ele[ele.length -1] === ele.length > 3){
+					var nodeName = ele.substr(1,ele.length-2).trim();
+					var node = document.createElement(nodeName);
+					return node;
+				}else{
+					return document.createDocumentFragment.textContent = ele;
+				}
+			}
+		},
+
 		each:function(callback){
 			for(var i = 0; i < this.elements.length; i ++){
 				callback.call(this.elements[i],i,this.elements[i])
@@ -87,7 +102,6 @@
 				
 			}else{
 
-				
 				var nameList = className.split(/\s+/);
 				this.each(function(n,v){
 					var list = v.classList;
@@ -208,6 +222,7 @@
 
 	}) 
 
+
 	dom.prototype.extend({
 		on:function(event,selector,handle){ //selector暂时
 			if(handle === undefined){
@@ -220,8 +235,9 @@
 					this.each(function(k,v){
 						v.addEventListener(event,function(e){
 							var target = e.target;
+							$('div').on('click','p',function())
 							//这里为了使得selector后代元素点击也触发事件，写了一个判断parent是否存在的方法
-					
+							
 						})
 					})			}
 			}
