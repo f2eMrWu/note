@@ -105,6 +105,7 @@ jQuery.event = {
 			elemData = dataPriv.get( elem );
 
 		// Don't attach events to noData or text/comment nodes (but allow plain objects)
+		//没有data或者文本 comment节点的时候不添加事件
 		if ( !elemData ) {
 			return;
 		}
@@ -117,6 +118,7 @@ jQuery.event = {
 		}
 
 		// Make sure that the handler has a unique ID, used to find/remove it later
+		//给handler加上guid，guid是什么鬼我不知道
 		if ( !handler.guid ) {
 			handler.guid = jQuery.guid++;
 		}
