@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>flexbox</title>
+</head>
+<body>
+	<style>
+		*{margin:0;padding:0;}
+		#flex{
+			list-style:none;
+			display: flex;
+
+			flex-flow: row wrap;
+
+			justify-content: space-around;
+		}
+		
+
+		.flex-item{
+		
+			background:blue;
+		  padding: 5px;
+		  width: 200px;
+		  height: 150px;
+		  margin-top: 10px;
+
+		  line-height: 150px;
+		  color: white;
+		  font-weight: bold;
+		  font-size: 3em;
+		  text-align: center;
+
+		}
+
+		/* Large */
+#flex {
+  display: flex;
+  flex-flow: row wrap;
+  /* 所有列面向主轴终点位置靠齐 */
+  justify-content: flex-end;
+}
+
+/* Medium screens */
+@media all and (max-width: 800px) {
+  #flex {
+    /* 当在中等屏幕中, 导航项目居中显示，并且剩余空间平均分布在列表之间 */
+    justify-content: space-around;
+  }
+}
+
+/* Small screens */
+@media all and (max-width: 500px) {
+  #flex {
+    /* 在小屏幕下, 我们没有足够空间行排列，但我们可以换成列排列 */
+    flex-direction: column;
+  }
+}	
+
+	</style>
+	<ul id="flex">
+		<li class="flex-item">1</li>
+		<li class="flex-item">2</li>
+		<li class="flex-item">3</li>
+		<li class="flex-item">4</li>
+		<li class="flex-item">5</li>
+	</ul>
+</body>
+</html>

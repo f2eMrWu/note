@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<title>Document</title>
+</head>
+<body>
+	<style>
+		*{margin:0; padding:0;list-style:none;}
+
+		#main{
+			display: flex
+		}
+
+		#flexLeft{
+			display: flex;
+			flex-flow:row wrap;
+			max-width: 180px;
+			flex:1;
+			background: #ccc;
+			
+		}
+
+		#flexLeft li{
+			width: 100%;
+			height: 80px;
+			line-height: 80px;
+			
+			text-align: center;
+			border-bottom:1px solid red;
+			align-self:center;
+		}
+
+		#flexRight{
+			background: #f1f1f1;
+			display: flex;
+			flex-flow: row wrap;
+			flex:3;
+		}
+		#flexRight ul{
+			width: 100%;
+		}
+		#flexRight li{
+		
+			border-bottom: 1px solid #CCC;
+		}
+
+	</style>
+
+	<div id="main">
+		<ul id="flexLeft">
+			<li>主套餐</li>
+			<li>小食甜点</li>
+			<li>饮料</li>
+			<li>优惠</li>
+		</ul>
+		<div id="flexRight">
+			<!-- <p>东道主套餐(xjxjx)</p> -->
+			<ul>
+				<li>
+					<dl>
+						<dt>红烧肉</dt>
+						<dd>肉食者必备</dd>
+						<dd>$25</dd>
+					</dl>
+				</li>
+				<li>
+					<dl>
+						<dt>红烧肉</dt>
+						<dd>肉食者必备</dd>
+						<dd>$25</dd>
+					</dl>
+				</li>
+			</ul>
+		</div>
+	</div>
+</body>
+</html>
