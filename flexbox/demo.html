@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<!-- 属性 
+* display: flex | inline-flex
+* flex-direction: row | row-reverse | column | column-reverse
+*  -->
+<body>
+	<style>
+		*{
+			margin:0;
+			padding:0;
+		}
+
+		#flex{
+			display: flex;
+			width: 1000px;
+			height: 100px;
+			border: 1px solid #ccc;
+			flex-direction: rtl;
+			flex-wrap:wrap;
+			justify-content: flex-start;
+		}
+		.box1{
+			background: red;
+			flex:1;
+		}
+		.box2{
+			background: blue;
+			flex:2;
+		}
+
+		p{
+			width: 10px;
+		}
+		data = {
+			iLoupanID:112114
+			iLoanType:1
+		}
+		var a = 'http://gold.pinganfang.com/hfd/web/apply/loupansales?iLoupanID=112114&iLoanType=1';
+
+		var script = document.createElement('script');
+
+		script.src = a;
+
+		script.innerHTML = "(function(data){window.data = data;})(data)";
+
+		var div = document.querySelector('div');
+		div.appendChild(script);
+	</style>
+
+    function test(result) {  
+        console.log(result)
+       
+    }  
+    var JSONP=document.createElement("script");  
+    JSONP.type="text/javascript";  
+    JSONP.src="http://crm.limengxiang.dev2.anhouse.com.cn/system/hfd/order/jsonp?callback=test";  
+    document.getElementsByTagName("head")[0].appendChild(JSONP);  
+
+
+	<div id='flex'>
+		<div class="box1">111111</div>
+		<div class="box2">22222</div>
+		<div style='width:100px;'></div>
+	</div>
+<!-- 	<p>1123</p> -->
+</body>
+</html>
