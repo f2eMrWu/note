@@ -1,0 +1,10 @@
+CACHE MANIFEST
+#v1 //版本号
+
+CACHE:
+basic-page-layout_ch4.html
+路径相对于自身如果是相对路径的话
+
+NETWORK:
+*
+FALLBACK:
