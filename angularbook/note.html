@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html ng-app='app'>
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+
+	<test></test>
+	<script src='./angular.js'></script>
+	<script>
+		angular.module('app',[])
+		.directive('test', function(){
+			return {
+				restrict: 'E',
+				template: '<a href="www.baidu.com">click</a>'
+			}
+		})
+	</script>
+</body>
+</html>

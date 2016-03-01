@@ -61,6 +61,10 @@ https://code.angularjs.org/1.3.0-beta.1/docs/api/ng/directive/ngController
 1. 注入器(injector)将用于创建此应用程序的依赖注入(dependency injection)；
 2. 注入器将会创建根作用域作为我们应用模型的范围；
 3. AngularJS将会链接根作用域中的DOM，从用ngApp标记的HTML标签开始，逐步处理DOM中指令和绑定。
-
+第二个input增加了ng-model的情况下为什么value值会改变但是不显示
+```
+<input type="text" ng-model='age'>
+<input type="text" ng-model='oldAge' value='{{age}}'>
+```
 
 
