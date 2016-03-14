@@ -1,14 +1,18 @@
 <!DOCTYPE html>
-<html  ng-app>
+<html>
 <head>
 	<meta charset="UTF-8">
 	<title>双向绑定</title>
 	<script src='./angular.1.2.js'></script>
-	<script src='./demo3.js'></script>
+	<script src='./test.js'></script>
 </head>
 <body>
-  <input type="text" ng-model='name' value=''> 
-   <input type="text"  ng-model='test' value='{{name}}'>  
-   {{name}}
+  <div ng-app>
+  	<form action="">
+  		<input type="checkbox" ng-model='other' >其他
+  		<input type="text" ng-disabled='!other'>
+  	</form>
+  </div>
+ 
 </body>
 </html>

@@ -1,0 +1,1 @@
+var ngModel = angular.module('ngModel', [])

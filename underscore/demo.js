@@ -75,7 +75,7 @@
       return func.apply(context, arguments);
     };
   };
- 
+  
 
   // A mostly-internal function to generate callbacks that can be applied
   // to each element in a collection, returning the desired result 鈥� either

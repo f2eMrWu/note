@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>刮刮卡特效 - 独行冰海</title>
+	
+	<meta name="viewport" content="initial-scale=1.0, width=device-width,minimum-scale=1.0,maximum-scale=1.0, user-scalable=no" />
+	<style>
+		.wrap {
+			width: 320px;
+			height: 400px;
+			background: url('bac.jpg') 0 0 no-repeat;
+		}
+	</style>
+</head>
+<body>
+	<div id="con" class="wrap">
+		<canvas id="myCanvas" width="320" height="400"></canvas>
+	</div>
+
+	<script>
+		var myCanvas = document.getElementById('myCanvas');
+var gray = myCanvas.getContext('2d');
+gray.beginPath();
+gray.fillStyle = "#999";
+gray.fillRect(0,0,320,400);
+gray.closePath();
+gray.globalCompositeOperation="destination-out";
+
+myCanvas.addEventListener('touchstart', function (e) {
+	myCanvas.addEventListener('touchmove', function(e){
+		gray.beginPath();
+		gray.fillStyle = "#f00";
+		gray.arc(e.targetTouches[0].clientX, e.targetTouches[0].clientY, 20, 0, Math.PI*2);
+		gray.fill();
+		gray.closePath();
+	});
+})
+	</script>
+</body>
+</html>	
