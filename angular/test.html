@@ -7,11 +7,11 @@
 	<script src='./test.js'></script>
 </head>
 <body>
-  <div ng-app>
-  	<form action="">
-  		<input type="checkbox" ng-model='other' >其他
-  		<input type="text" ng-disabled='!other'>
-  	</form>
+  <div ng-app='test'>
+  	<div ng-controller='Ctrl'>
+      {{name}}
+      <p></p> 
+    </div>
   </div>
  
 </body>
